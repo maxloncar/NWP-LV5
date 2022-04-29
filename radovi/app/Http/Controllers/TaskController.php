@@ -50,6 +50,6 @@ class TaskController extends Controller
                 array_push($students, $part);
             }
         }
-        return view('task_details', ['tasksData' => $tasksData, 'applied_students' => $students]);
+        return view('task_details', ['tasksData' => $tasksData, 'students' => $students]);
     }
 }
