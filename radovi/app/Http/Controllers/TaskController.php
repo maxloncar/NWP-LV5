@@ -39,8 +39,8 @@ class TaskController extends Controller
     }
 
     public function acceptStudent(){
-        $task_id = Request::input('taskId');
-        $tasksData = DB::table('tasks')->get()->where('id', $task_id);
+        $taskId = Request::input('task_id');
+        $tasksData = DB::table('tasks')->get()->where('id', $taskId);
         foreach ($tasksData as $task) {
             $students = array();
             $appliedStudents = array();
@@ -50,6 +50,6 @@ class TaskController extends Controller
                 array_push($students, $part);
             }
         }
-        return view('task_details', ['tasksData' => $tasksData, 'students' => $students]);
+        return view('task_details', ['tasksData' => $tasksData, 'applied_students' => $students]);
     }
 }
